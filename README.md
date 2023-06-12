@@ -1,4 +1,12 @@
-## Initial Terminal commands
+# Django Rest Framework API 
+## for the 
+# Mom Network project
+
+### Initial Database
+
+<img width="70%" alt="database diagram" src="src/database_structure.png">
+
+### Initial Terminal commands
 
 - Install Django:  pip3 install django
 
