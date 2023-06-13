@@ -19,11 +19,3 @@
 - Create env.py file and store Cloudinary url value
 
 - In settings.py, add cloudinary to installed apps and create storage
-
-### Starting apps - 
-
-python manage.py startapp user_profile
-
-python manage.py makemigrations
-
-python manage.py migrate
