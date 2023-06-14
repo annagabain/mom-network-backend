@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
     '8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu99.gitpod.io',
     'mom-network-backend.herokuapp.com',
     'localhost',
+    'https://3000-annagabain-momnetworkfr-d0eld32k77y.ws-eu99.gitpod.io',
     'https://mom-network-frontend.herokuapp.com'
     ]
 
