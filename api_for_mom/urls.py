@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import root_route
-from django.views.generic import RedirectView
 
 urlpatterns = [
     path('', root_route),
@@ -26,9 +25,4 @@ urlpatterns = [
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('', include('user_profile.urls')),
-    path(
-        'favicon.ico',
-        RedirectView.as_view(url='static/favicon.ico', permanent=True),
-        name='favicon'
-    ),
 ]
