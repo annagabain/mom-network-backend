@@ -38,8 +38,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # DEBUG = True
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu99.gitpod.io',
-                 'mom-network-backend.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    '8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu99.gitpod.io',
+    'mom-network-backend.herokuapp.com',
+    'localhost',
+    'https://mom-network-frontend.herokuapp.com/'
+    ]
 
 # Application definition
 
