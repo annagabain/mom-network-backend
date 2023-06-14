@@ -2,6 +2,8 @@
 ## for the 
 # Mom Network project
 
+## Live: https://mom-network-backend.herokuapp.com/
+
 ### Initial Database
 
 <img width="70%" alt="database diagram" src="src/database_structure.png">
