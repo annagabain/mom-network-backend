@@ -42,7 +42,7 @@ ALLOWED_HOSTS = [
     '8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu99.gitpod.io',
     'mom-network-backend.herokuapp.com',
     'localhost',
-    'https://mom-network-frontend.herokuapp.com/'
+    'https://mom-network-frontend.herokuapp.com'
     ]
 
 # Application definition
