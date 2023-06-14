@@ -39,8 +39,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOST'),
     '8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu99.gitpod.io',
     'mom-network-backend.herokuapp.com',
+    'http://localhost:3000',
     'localhost',
     'https://3000-annagabain-momnetworkfr-7emuv84hil8.ws-eu99.gitpod.io',
     'https://mom-network-frontend.herokuapp.com'
