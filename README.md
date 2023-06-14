@@ -19,3 +19,7 @@
 - Create env.py file and store Cloudinary url value
 
 - In settings.py, add cloudinary to installed apps and create storage
+
+
+### Deployment 
+
