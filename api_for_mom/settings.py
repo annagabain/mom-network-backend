@@ -45,7 +45,7 @@ ALLOWED_HOSTS = [
     'http://localhost:3000',
     'localhost',
     'https://3000-annagabain-momnetworkfr-7emuv84hil8.ws-eu99.gitpod.io',
-    'https://mom-network-frontend.herokuapp.com'
+    'https://mom-network-frontend.herokuapp.com',
     ]
 
 # Application definition
@@ -115,13 +115,28 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# if 'CLIENT_ORIGIN' in os.environ:
+#     CORS_ALLOWED_ORIGINS = [
+#         os.environ.get('CLIENT_ORIGIN')
+#     ]
+# else:
+#     CORS_ALLOWED_ORIGIN_REGEXES = [
+#         r"^https://.*\.gitpod\.io$",
+#     ]
+
+# CORS_ALLOW_CREDENTIALS = True
+
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
     ]
-else:
+
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(
+        r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE
+    ).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
 
 CORS_ALLOW_CREDENTIALS = True
