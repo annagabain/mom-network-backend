@@ -40,13 +40,14 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    '8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu99.gitpod.io',
+    # '8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu99.gitpod.io',
+    '8000-annagabain-momnetworkba-8k2p3fozrxk.ws-eu100.gitpod.io',
     'mom-network-backend.herokuapp.com',
     'http://localhost:3000',
     'localhost',
     'https://3000-annagabain-momnetworkfr-7emuv84hil8.ws-eu99.gitpod.io',
     'https://mom-network-frontend.herokuapp.com',
-    ]
+]
 
 # Application definition
 
@@ -78,6 +79,10 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': [(
         'rest_framework.authentication.SessionAuthentication'
         if 'DEV' in os.environ

@@ -24,5 +24,55 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    
     path('', include('user_profile.urls')),
 ]
+
+
+# from django.contrib import admin
+# from django.urls import path, include
+# from rest_framework.decorators import api_view
+# from rest_framework.response import Response
+# from django.urls.resolvers import URLPattern, URLResolver
+
+# # Define the root route view
+# @api_view()
+# def root_route(request):
+#     # Get all the endpoints from the URL patterns
+#     endpoints = get_endpoints(urlpatterns)
+
+#     # Construct the welcome message
+#     message = "Welcome to MOM NETWORK's Django REST Framework API!\n\nEndpoints:\n"
+#     for endpoint in endpoints:
+#         message += f"- {endpoint}\n"
+
+#     return Response({"message": message})
+
+# # Function to extract endpoints from URL patterns
+# def get_endpoints(urlpatterns, prefix=''):
+#     endpoints = []
+#     for pattern in urlpatterns:
+#         if isinstance(pattern, URLPattern):
+#             endpoint = get_endpoint(pattern, prefix)
+#             if endpoint:
+#                 endpoints.append(endpoint)
+#         elif isinstance(pattern, URLResolver):
+#             endpoints.extend(get_endpoints(pattern.url_patterns, prefix + pattern.pattern.regex.pattern))
+
+#     return endpoints
+
+# # Function to extract endpoint from URL pattern
+# def get_endpoint(pattern, prefix=''):
+#     if pattern.callback:
+#         return prefix + pattern.pattern.regex.pattern
+
+#     return None
+
+# urlpatterns = [
+#     path('', root_route),
+#     path('admin/', admin.site.urls),
+#     path('api-auth/', include('rest_framework.urls')),
+#     path('dj-rest-auth/', include('dj_rest_auth.urls')),
+#     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+#     path('', include('user_profile.urls')),
+# ]
