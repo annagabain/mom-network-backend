@@ -3,12 +3,12 @@ from .models import Profile
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-    user = serializers.ReadOnlyField(source='user.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Profile
         fields = [
-            'id', 'user', 'created_at', 'updated_at', 'name', 
+            'id', 'owner', 'created_at', 'updated_at', 'name', 
             'bio', 'location', 'birth_date', 'profile_image'
         ]
         

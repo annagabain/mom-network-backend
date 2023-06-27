@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('location', models.CharField(blank=True, max_length=100)),
                 ('birth_date', models.DateField(blank=True, null=True)),
                 ('profile_image', models.ImageField(default='../female_avatar-300x300_zcvupi', upload_to='images/')),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('owner', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'ordering': ['-created_at'],
