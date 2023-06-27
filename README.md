@@ -18,10 +18,21 @@
 
 - Install Pillow (Image Processing):  pip install Pillow
 
-- Create env.py file and store Cloudinary url value
+- Create env.py file and store the Cloudinary url value
 
-- In settings.py, add cloudinary to installed apps and create storage
+- In settings.py, add Cloudinary to installed apps and create storage
 
 
 ### Deployment 
 
+### Sources & Credits
+
+Build a REST API with Django REST Framework:  https://medium.com/swlh/build-your-first-rest-api-with-django-rest-framework-e394e39a482c
+
+### Tools
+
+Draw SQL Graph: https://drawsql.app/
+
+### Acknowledgments
+
+Richard Wells - the course mentor for friendly guidance, help with refactoring some code and numerous project feedback sessions
