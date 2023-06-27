@@ -4,9 +4,9 @@
 
 ## Live: https://mom-network-backend.herokuapp.com/
 
-### Initial Database
+### The Database
 
-<img width="70%" alt="database diagram" src="src/database_structure.png">
+<img width="70%" alt="database diagram" src="src/drawsql-mom-network-database-diagram-export-2023-06-27.png">
 
 ### Initial Terminal commands
 
