@@ -18,7 +18,8 @@ class PostListTestCase(TestCase):
             'content': 'Test content',
             'post_image': 'path/to/image.jpg'
         }
-
+    
+    # test to see if the list of all posts is visible
     def test_post_list_get(self):
         Post.objects.create(created_by=self.user, content='Test content 1')
         Post.objects.create(created_by=self.user, content='Test content 2')
@@ -33,11 +34,15 @@ class PostListTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data, expected_data)
 
+    # test to be able to create a post
     def test_post_list_post(self):
         request = self.factory.post('/posts/', data=self.post_data, format='json')
         response = PostList.as_view()(request)
 
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        # forbidden, with status 403 if not logged in
+        # self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN) 
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED) 
+        # self.assertEqual(Post.objects.count(), 0)
         self.assertEqual(Post.objects.count(), 1)
         self.assertEqual(Post.objects.first().created_by, self.user)
 
