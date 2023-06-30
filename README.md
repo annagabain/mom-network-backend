@@ -27,24 +27,28 @@
 ### Other Terminal commands and repeated App creation process
 
 1. Create the App: python manage.py startapp _my_app_name_
+    -  add it to installed apps in settings.py.
 2. Make a Model:
 
-- from django.db import models
-- from django.contrib.auth.models import User
-- class _my_Model_name_(models.Model):
-- all the fields, methods and the Meta class
+    - from django.db import models
+    - from django.contrib.auth.models import User
+    - class _my_Model_name_(models.Model):
+    - all the fields, methods and the Meta class
+    - migrate into your database: in the Terminal 
+        - python manage.py makemigrations
+        - python manage.py migrate
 
 3. Create a Serializer for this Model: create the serializers.py file, inside that file:
 
-- from rest_framework import serializers,
-- .models import _my_model_name_
+    - from rest_framework import serializers,
+    - .models import _my_model_name_
 
 4. Make generic Viewset, in views.py:
 
-- from rest_framework.views import APIView
-- from .models import _my_Model_name_
-- from .serializers import _my_Serializer_name_
-- other imports
+    - from rest_framework.views import APIView
+    - from .models import _my_Model_name_
+    - from .serializers import _my_Serializer_name_
+    - other imports
 
 5. Create the Route(s) in urls.py
 
