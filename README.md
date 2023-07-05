@@ -1,8 +1,6 @@
 # Django Rest Framework API
 
-## for the
-
-# Mom Network project
+# for Mom Network project
 
 ## Live: https://mom-network-backend.herokuapp.com/
 
