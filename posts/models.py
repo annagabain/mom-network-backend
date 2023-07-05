@@ -16,6 +16,6 @@ class Post(models.Model):
 
 
     def __str__(self):
-        # return self.owner.username + self.content
-        return self.content
+        return self.owner.username + ' says: ' + self.content
+        # return self.content
 
