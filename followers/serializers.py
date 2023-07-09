@@ -6,7 +6,7 @@ from django.db import IntegrityError
 class FollowerSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     person_followed_name = serializers.ReadOnlyField(
-        source='person_followed.username')
+        source='followed.username')
 
     class Meta:
         model = Follower
