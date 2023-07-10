@@ -18,3 +18,11 @@ class MessageSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 "Make sure you are the sender of this message.")
         return value
+
+    def validate(self, data):
+        sender = data['sender']
+        recipient = data['recipient']
+
+        if sender == recipient:
+            raise serializers.ValidationError("Sender and recipient must be different.")
+        return data
