@@ -30,8 +30,11 @@ urlpatterns = [
     path('', include('comments.urls')),
     path('', include('likes.urls')),
     path('', include('followers.urls')),
-    path('', include('newsletters.urls')),
+    
+    path('', include('newsletter_subscribe.urls')),
     path('', include('message.urls')),
+    path('', include('page.urls')),
+
 
 
 
