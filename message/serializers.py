@@ -9,5 +9,12 @@ class MessageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Message
-        fields = ['id', 'sender', 'recipient', 'title', 'message_content', 
-                  'sender_username',  'recipient_username', 'created_at']
+        fields = ['id', 'sender', 'sender_username', 'recipient', 'recipient_username', 
+                'title', 'message_content', 'created_at']
+
+    def validate_sender(self, value):
+        current_user = self.context.get('current_user')
+        if value != current_user:
+            raise serializers.ValidationError(
+                "Make sure you are the sender of this message.")
+        return value
