@@ -8,6 +8,13 @@
 
 <img width="70%" alt="database diagram" src="src/drawsql-mom-network-database-diagram-export-2023-06-27.png">
 
+
+### Django Rest Framework
+
+<img width="70%" alt="view" src="src/newsletter_list_view.png">
+<img width="70%" alt="view" src="src/newsletter_detail_view.png">
+
+
 ### Initial Terminal commands
 
 - Install Django: pip3 install django
@@ -43,7 +50,8 @@
 
 4. Make generic Viewset, in views.py:
 
-    - from rest_framework.views import APIView
+    - from rest_framework import generics, permissions
+    - from _my_main_app_name_.permissions import IsOwnerOrReadOnly
     - from .models import _my_Model_name_
     - from .serializers import _my_Serializer_name_
     - other imports
