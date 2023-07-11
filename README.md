@@ -8,6 +8,29 @@
 
 <img width="70%" alt="database diagram" src="src/drawsql-mom-network-database-diagram-export-2023-06-27.png">
 
+### Endpoints
+
+https://mom-network-backend.herokuapp.com/ 
+and one of the following endpoints:
+
+- admin/
+- profiles/
+- profiles/id
+- posts/
+- posts/id
+- comments/
+- comments/id
+- likes/
+- likes/id
+- followers/
+- followers/id
+- newsletter/
+- newsletter/id
+- messages/
+- messages/id
+- page/
+- page/id
+
 
 ### Django Rest Framework
 
