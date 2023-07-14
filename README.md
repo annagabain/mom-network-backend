@@ -84,6 +84,13 @@ dj-rest-auth/registration/
 
 5. Create the Route(s) in urls.py
 
+### Testing
+
+With Postman
+
+<img width="70%" alt="view" src="src/test_api_in_postman.png">
+
+
 ### Deployment
 
 The Deployment of the Mom Network API has been completed with the following steps:
