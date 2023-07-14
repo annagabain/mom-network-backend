@@ -14,6 +14,9 @@ https://mom-network-backend.herokuapp.com/
 and one of the following endpoints:
 
 - admin/
+api-auth/
+dj-rest-auth/
+dj-rest-auth/registration/
 - profiles/
 - profiles/id
 - posts/

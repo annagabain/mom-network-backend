@@ -1,4 +1,5 @@
 from api_for_mom.permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import IsAdminUser
 from .models import Profile
 from .serializers import ProfileSerializer
 from django.db.models import Count
@@ -11,7 +12,10 @@ class ProfileList(generics.ListAPIView):
         followers_count = Count('owner__followed', distinct=True),
         following_count = Count('owner__following', distinct=True)
     ).order_by('-created_at')
+    
     serializer_class = ProfileSerializer
+    permission_classes = [IsAdminUser]
+
     filter_backends = [
         filters.OrderingFilter
     ]
