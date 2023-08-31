@@ -11,10 +11,12 @@ class PostList(generics.ListCreateAPIView):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
+    
     queryset = Post.objects.annotate(
         likes_count = Count('likes', distinct=True),
         comments_count = Count('comments', distinct=True)
     ).order_by('-created_at')
+
     filter_backends = [
         filters.OrderingFilter
     ]
