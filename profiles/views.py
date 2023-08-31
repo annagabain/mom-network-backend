@@ -4,7 +4,9 @@ from rest_framework.permissions import IsAuthenticated
 from .models import Profile
 from .serializers import ProfileSerializer
 from django.db.models import Count
-from rest_framework import generics, filters
+# from rest_framework import generics, filters
+from rest_framework import generics, permissions, filters
+
 
 
 class ProfileList(generics.ListAPIView):
@@ -16,7 +18,10 @@ class ProfileList(generics.ListAPIView):
     
     serializer_class = ProfileSerializer
     # permission_classes = [IsAdminUser]
-    permission_classes = [IsAuthenticated]  # Logged in users can see the list of all profiles
+    # permission_classes = [IsAuthenticated]  # Logged in users can see the list of all profiles
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly
+    ]
 
     filter_backends = [
         filters.OrderingFilter
