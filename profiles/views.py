@@ -1,5 +1,6 @@
 from api_for_mom.permissions import IsOwnerOrReadOnly
 from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAuthenticated
 from .models import Profile
 from .serializers import ProfileSerializer
 from django.db.models import Count
