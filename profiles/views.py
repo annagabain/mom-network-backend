@@ -14,7 +14,8 @@ class ProfileList(generics.ListAPIView):
     ).order_by('-created_at')
     
     serializer_class = ProfileSerializer
-    permission_classes = [IsAdminUser]
+    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]  # Logged in users can see the list of all profiles
 
     filter_backends = [
         filters.OrderingFilter
