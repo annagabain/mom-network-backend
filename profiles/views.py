@@ -14,10 +14,10 @@ class ProfileList(generics.ListAPIView):
     serializer_class = ProfileSerializer
     # permission_classes = [IsAdminUser]
     # permission_classes = [IsAuthenticated]  # Logged in users can see the list of all profiles
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly
-    ]
-    
+    # permission_classes = [
+    #     permissions.IsAuthenticatedOrReadOnly
+    # ]
+
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
         followers_count=Count('owner__followed', distinct=True),
