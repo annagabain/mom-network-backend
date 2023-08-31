@@ -5,18 +5,18 @@ from django.db.models import Count
 from rest_framework import generics, permissions, filters
 
 from api_for_mom.permissions import IsOwnerOrReadOnly
-from rest_framework.permissions import IsAdminUser
-from rest_framework.permissions import IsAuthenticated
+# from rest_framework.permissions import IsAdminUser
+# from rest_framework.permissions import IsAuthenticated
 
 
-class ProfileList(generics.ListAPIView):
+class ProfileList(generics.ListCreateAPIView):
 
     serializer_class = ProfileSerializer
     # permission_classes = [IsAdminUser]
     # permission_classes = [IsAuthenticated]  # Logged in users can see the list of all profiles
-    # permission_classes = [
-    #     permissions.IsAuthenticatedOrReadOnly
-    # ]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly
+    ]
 
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
