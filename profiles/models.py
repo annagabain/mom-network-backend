@@ -8,10 +8,13 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
-    bio = models.TextField(blank=True)
-    location = models.CharField(max_length=100, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
-    profile_image = models.ImageField(
+    # bio = models.TextField(blank=True)
+    # location = models.CharField(max_length=100, blank=True)
+    # birth_date = models.DateField(null=True, blank=True)
+    # profile_image = models.ImageField(
+    #     upload_to='images/', default='../female_avatar-300x300_zcvupi'
+    content = models.TextField(blank=True)
+    image = models.ImageField(
         upload_to='images/', default='../female_avatar-300x300_zcvupi'
     )
 
@@ -22,7 +25,7 @@ class Profile(models.Model):
         return self.owner.username + ' \'s profile'
 
 
-def  create_profile(sender, instance, created, **kwargs):
+def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(owner=instance)
 

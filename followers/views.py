@@ -5,8 +5,8 @@ from .serializers import FollowerSerializer
 
 
 class FollowerList(generics.ListCreateAPIView):
-    queryset = Follower.objects.all()
     serializer_class = FollowerSerializer
+    queryset = Follower.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
@@ -14,6 +14,6 @@ class FollowerList(generics.ListCreateAPIView):
 
 
 class FollowerDetail(generics.RetrieveDestroyAPIView):
-    queryset = Follower.objects.all()
     serializer_class = FollowerSerializer
+    queryset = Follower.objects.all()
     permission_classes = [IsOwnerOrReadOnly]
