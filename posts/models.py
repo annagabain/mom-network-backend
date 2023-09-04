@@ -7,9 +7,10 @@ class Post(models.Model):
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    post_image = models.ImageField(
-        upload_to='images/', default='../pngkey.com-ega-png-2332677_enun3f'
-    )
+    # post_image = models.ImageField(
+    #     upload_to='images/', default='../pngkey.com-ega-png-2332677_enun3f'
+    # )
+    post_image = models.ImageField(upload_to='images/')
 
     class Meta:
         ordering = ['-created_at']
