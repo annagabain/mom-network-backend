@@ -10,7 +10,7 @@ class Post(models.Model):
     # post_image = models.ImageField(
     #     upload_to='images/', default='../pngkey.com-ega-png-2332677_enun3f'
     # )
-    post_image = models.ImageField(upload_to='images/')
+    post_image = models.ImageField(upload_to='images/', blank=True)
 
     class Meta:
         ordering = ['-created_at']
