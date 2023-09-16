@@ -14,5 +14,5 @@ class Comment(models.Model):
         ordering = ['created_at']
 
     def __str__(self):
-        return f'{self.owner.username} commented on {self.post}: {self.content}'
+        return f'{self.owner.username} commented on {self.post}'
 
