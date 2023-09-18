@@ -121,4 +121,8 @@ Draw SQL Graph: https://drawsql.app/
 
 ### Acknowledgments
 
-Richard Wells - the course mentor for friendly guidance, help with refactoring some code and numerous project feedback sessions
+Seán Murphy - the course tutor for friendly help with database reset and refactoring some code
+
+Richard Wells - the course mentor for friendly guidance and a project initiation session
+
+Jakob Lövhall - help with maintaining the study schedule, countless hours of babysitting and motivational encouragement
